@@ -1,0 +1,101 @@
+/* Pantalla Home (referencia visual). No forma parte de la autocalificación. */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Roboto", system-ui, sans-serif;
+  background: #fff;
+  color: #000;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.top-bar {
+  background: #1cd1b0;
+  padding: 10px 26px;
+  font-size: 15px;
+}
+
+.brand-header {
+  background: #00669f;
+  box-shadow: 0 10px 7px rgba(0, 0, 0, 0.25);
+  padding: 24px 28px;
+}
+
+.brand-header h1 {
+  margin: 0;
+  font-size: 40px;
+  font-weight: 400;
+}
+
+.main-nav {
+  background: #001d2d;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  display: flex;
+  justify-content: flex-end;
+  gap: 32px;
+  padding: 16px 28px;
+  color: #fff;
+  font-size: 16px;
+}
+
+.page-main {
+  min-height: calc(100vh - 38px - 100px - 51px - 51px);
+  padding: 32px 28px 120px;
+}
+
+.hub-note {
+  max-width: 640px;
+  line-height: 1.5;
+}
+
+.site-footer {
+  background: #00669f;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  color: #fff9f9;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 14px 28px;
+  font-size: 16px;
+}
+
+.footer-github {
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.footer-github:hover {
+  text-decoration: underline;
+}
+
+.fab-plus {
+  position: fixed;
+  right: 32px;
+  bottom: 96px;
+  width: 82px;
+  height: 82px;
+  border-radius: 50%;
+  background: #1cd1b0;
+  color: #001d2d;
+  font-size: 48px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+.fab-plus:focus-visible {
+  outline: 3px solid #00669f;
+  outline-offset: 3px;
+}

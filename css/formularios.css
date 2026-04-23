@@ -1,0 +1,82 @@
+/* TODO: replicá tipografías, colores y layout del frame «Añadir» (Figma). */
+/* Recordá usar display flex o grid, border-radius y padding/gap (lo piden los tests). */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Roboto", system-ui, sans-serif;
+}
+
+a {
+  color: inherit;
+}
+
+.page-shell {
+  max-width: 1024px;
+  margin: 0 auto;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.top-bar {
+  background: #1cd1b0;
+  padding: 10px 26px;
+}
+
+.brand-header {
+  background: #00669f;
+  padding: 22px 28px;
+}
+
+.brand-title {
+  margin: 0;
+  font-size: 40px;
+}
+
+.main-nav {
+  background: #001d2d;
+  color: #fff;
+  display: flex;
+  justify-content: flex-end;
+  gap: 32px;
+  padding: 16px 28px;
+}
+
+.main-nav a {
+  text-decoration: none;
+}
+
+.page-main {
+  flex: 1;
+  padding: 24px 16px;
+}
+
+.placeholder-copy {
+  max-width: 640px;
+  line-height: 1.5;
+}
+
+.site-footer {
+  background: #00669f;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 28px;
+}
+
+.footer-github {
+  font-weight: 700;
+  text-decoration: none;
+  color: inherit;
+}
+
+.footer-github:hover {
+  text-decoration: underline;
+}

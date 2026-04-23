@@ -1,0 +1,143 @@
+name: Pruebas automáticas (Classroom)
+on:
+  push:
+  workflow_dispatch:
+  repository_dispatch:
+
+permissions:
+  checks: write
+  actions: read
+  contents: read
+
+jobs:
+  run-autograding-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Descargar el repositorio
+        uses: actions/checkout@v4
+
+      - name: Archivos base y carpeta de imágenes
+        id: test-base-structure
+        uses: classroom-resources/autograding-io-grader@v1
+        with:
+          test-name: "Estructura base (formularios.html, CSS e img/)"
+          command: "bash scripts/classroom-check.sh base-structure"
+          expected-output: "CORRECTO"
+          comparison-method: exact
+          timeout: 10
+          max-score: 10
+
+      - name: Hoja de estilos enlazada
+        id: test-css-linked
+        uses: classroom-resources/autograding-io-grader@v1
+        with:
+          test-name: "css/formularios.css enlazado desde formularios.html"
+          command: "bash scripts/classroom-check.sh css-linked"
+          expected-output: "CORRECTO"
+          comparison-method: exact
+          timeout: 10
+          max-score: 10
+
+      - name: Cascarón semántico
+        id: test-chrome-semantico
+        uses: classroom-resources/autograding-io-grader@v1
+        with:
+          test-name: "Uso de header, nav, main y footer"
+          command: "bash scripts/classroom-check.sh chrome-semantico"
+          expected-output: "CORRECTO"
+          comparison-method: exact
+          timeout: 10
+          max-score: 10
+
+      - name: Formulario y envío
+        id: test-form-basico
+        uses: classroom-resources/autograding-io-grader@v1
+        with:
+          test-name: "Form con POST, botón submit y texto Añadir"
+          command: "bash scripts/classroom-check.sh form-basico"
+          expected-output: "CORRECTO"
+          comparison-method: exact
+          timeout: 10
+          max-score: 10
+
+      - name: Campos obligatorios
+        id: test-campos-requeridos
+        uses: classroom-resources/autograding-io-grader@v1
+        with:
+          test-name: "Nombre y especie marcados como required"
+          command: "bash scripts/classroom-check.sh campos-requeridos"
+          expected-output: "CORRECTO"
+          comparison-method: exact
+          timeout: 10
+          max-score: 10
+
+      - name: Controles HTML5
+        id: test-tipos-html5
+        uses: classroom-resources/autograding-io-grader@v1
+        with:
+          test-name: "Fecha, archivo y descripción (textarea)"
+          command: "bash scripts/classroom-check.sh tipos-html5"
+          expected-output: "CORRECTO"
+          comparison-method: exact
+          timeout: 10
+          max-score: 15
+
+      - name: Poderes con fieldset
+        id: test-poderes-fieldset
+        uses: classroom-resources/autograding-io-grader@v1
+        with:
+          test-name: "Fieldset Poderes y cuatro checkboxes"
+          command: "bash scripts/classroom-check.sh poderes-fieldset"
+          expected-output: "CORRECTO"
+          comparison-method: exact
+          timeout: 10
+          max-score: 15
+
+      - name: Tipo de personaje (radio)
+        id: test-tipo-radio
+        uses: classroom-resources/autograding-io-grader@v1
+        with:
+          test-name: "Grupo de radios con name tipo-personaje"
+          command: "bash scripts/classroom-check.sh tipo-radio"
+          expected-output: "CORRECTO"
+          comparison-method: exact
+          timeout: 10
+          max-score: 5
+
+      - name: Textos de la consigna
+        id: test-textos-consigna
+        uses: classroom-resources/autograding-io-grader@v1
+        with:
+          test-name: "Titular y bajada iguales a la maqueta"
+          command: "bash scripts/classroom-check.sh textos-consigna"
+          expected-output: "CORRECTO"
+          comparison-method: exact
+          timeout: 10
+          max-score: 5
+
+      - name: Estilos del panel del formulario
+        id: test-css-formulario
+        uses: classroom-resources/autograding-io-grader@v1
+        with:
+          test-name: "CSS con layout, radios y espaciados"
+          command: "bash scripts/classroom-check.sh css-formulario"
+          expected-output: "CORRECTO"
+          comparison-method: exact
+          timeout: 10
+          max-score: 10
+
+      - name: Informe de resultados para Classroom
+        uses: classroom-resources/autograding-grading-reporter@v1
+        env:
+          TEST-BASE-STRUCTURE_RESULTS: "${{ steps.test-base-structure.outputs.result }}"
+          TEST-CSS-LINKED_RESULTS: "${{ steps.test-css-linked.outputs.result }}"
+          TEST-CHROME-SEMANTICO_RESULTS: "${{ steps.test-chrome-semantico.outputs.result }}"
+          TEST-FORM-BASICO_RESULTS: "${{ steps.test-form-basico.outputs.result }}"
+          TEST-CAMPOS-REQUERIDOS_RESULTS: "${{ steps.test-campos-requeridos.outputs.result }}"
+          TEST-TIPOS-HTML5_RESULTS: "${{ steps.test-tipos-html5.outputs.result }}"
+          TEST-PODERES-FIELDSET_RESULTS: "${{ steps.test-poderes-fieldset.outputs.result }}"
+          TEST-TIPO-RADIO_RESULTS: "${{ steps.test-tipo-radio.outputs.result }}"
+          TEST-TEXTOS-CONSIGNA_RESULTS: "${{ steps.test-textos-consigna.outputs.result }}"
+          TEST-CSS-FORMULARIO_RESULTS: "${{ steps.test-css-formulario.outputs.result }}"
+        with:
+          runners: test-base-structure,test-css-linked,test-chrome-semantico,test-form-basico,test-campos-requeridos,test-tipos-html5,test-poderes-fieldset,test-tipo-radio,test-textos-consigna,test-css-formulario

@@ -1,0 +1,27 @@
+name: CI verificación local
+on:
+  push:
+    branches:
+      - main
+      - master
+  pull_request:
+    branches:
+      - main
+      - master
+
+permissions:
+  contents: read
+
+jobs:
+  verificar-con-signa:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Ejecutar todas las pruebas de classroom-check
+        run: |
+          set -euo pipefail
+          for cmd in base-structure css-linked chrome-semantico form-basico campos-requeridos tipos-html5 poderes-fieldset tipo-radio textos-consigna css-formulario; do
+            echo "::group::$cmd"
+            bash scripts/classroom-check.sh "$cmd"
+            echo "::endgroup::"
+          done
