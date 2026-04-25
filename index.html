@@ -4,35 +4,72 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>DC Heroes — Home | Programación II</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
     <link rel="stylesheet" href="css/hub.css" />
   </head>
+
   <body>
-    <div class="top-bar">Descuentos 20%</div>
-    <header class="brand-header">
+    <header class="top-header">
+      <p>Descuentos 20%</p>
+    </header>
+
+    <header class="main-header">
       <h1>DC Heroes</h1>
     </header>
+
     <nav class="main-nav" aria-label="Principal">
       <a href="#">Contacto</a>
-      <a href="#">Registrarme</a>
+      <a href="formularios.html">Registrarme</a>
       <a href="#">Ingresar</a>
     </nav>
-    <main class="page-main">
-      <p class="hub-note">
-        Esta pantalla continúa la estética del ejercicio de <strong>Box Model</strong> y sirve solo
-        como punto de partida. La entrega que corrige el docente y los tests automáticos es la
-        pantalla de <strong>formularios</strong>.
-      </p>
+
+    <main>
+      <section class="cards">
+        <article class="hero-card">
+          <div class="card-cover">
+            <img src="img/fondo batman.png" alt="Batman fondo" />
+          </div>
+
+          <span class="heart">❤</span>
+          <img class="hero-avatar" src="img/batman.png" alt="Batman" />
+
+          <div class="card-content">
+            <h2>Batman</h2>
+            <p>
+              Bruce Wayne es el único personaje que se identifica como Batman y
+              aparece en Batman, Detective Comics, Batman, Batman y Robin y
+              Batman: The Dark Knight. Dick Grayson vuelve al manto de Nightwing.
+            </p>
+            <button>Ver más</button>
+          </div>
+        </article>
+
+        <article class="hero-card">
+          <div class="card-cover">
+            <img src="img/fondo harley.png" alt="Harley fondo" />
+          </div>
+
+          <span class="heart">❤</span>
+          <img class="hero-avatar" src="img/harley.png" alt="Harley Quinn" />
+
+          <div class="card-content">
+            <h2>Harley Quinn</h2>
+            <p>
+              Harley es la única persona que fue a trabajar a un manicomio y
+              pensó: “Ese payaso asesino que no para de reír parece un excelente
+              partido”. Pasó de analizar mentes criminales a golpear gente con
+              un mazo gigante.
+            </p>
+            <button>Ver más</button>
+          </div>
+        </article>
+      </section>
     </main>
-    <footer class="site-footer">
-      <p>Todos los derechos reservados - [TU NOMBRE Y APELLIDO]</p>
-      <a href="https://github.com/" class="footer-github">GitHub</a>
-    </footer>
+
     <a class="fab-plus" href="formularios.html" aria-label="Ir al formulario Añadí tu super">+</a>
+
+    <footer>
+      <a href="https://github.com/" target="_blank" class="github">GitHub</a>
+      <p>Todos los derechos reservados - LUCAS PEREZ</p>
+    </footer>
   </body>
 </html>
