@@ -4,19 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>DC Heroes — Añadí tu super | Programación II</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;700&family=Karla&family=Roboto:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
     <link rel="stylesheet" href="css/formularios.css" />
   </head>
+
   <body>
-    <!--
-      Plantilla guía — Completá el markup según el frame «Añadir» de Figma.
-      Recordá: los tests automáticos sólo miran este archivo y css/formularios.css.
-    -->
     <div class="page-shell">
       <div class="top-bar">Descuentos 20%</div>
 
@@ -26,25 +17,96 @@
 
       <nav class="main-nav" aria-label="Principal">
         <a href="#">Contacto</a>
-        <a href="#">Registrarme</a>
+        <a href="formularios.html">Registrarme</a>
         <a href="#">Ingresar</a>
       </nav>
 
       <main class="page-main">
-        <!-- TODO: envolver el formulario en <form method="post" action="#"> -->
-        <!-- TODO: título «Añadí tu super!» y texto guía de la maqueta -->
-        <!-- TODO: campos Nombre (*), Especie (*), Fecha, Foto, Descripción -->
-        <!-- TODO: fieldset Poderes con 4 checkboxes -->
-        <!-- TODO: fieldset Tipo de personaje con radios name="tipo-personaje" -->
-        <!-- TODO: botón <button type="submit">Añadir</button> -->
-        <p class="placeholder-copy">
-          Reemplazá este párrafo por el formulario completo respetando la jerarquía del diseño de
-          referencia.
-        </p>
+        <section class="form-panel">
+          <h1>Añadí tu super!</h1>
+          <p class="form-text">Agregá tu personaje favorito completando las opciones.</p>
+
+          <form action="#" method="post" enctype="multipart/form-data">
+            <div class="form-grid">
+              <div class="field">
+                <label for="nombre">*Nombre</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Nombre" required />
+              </div>
+
+              <div class="field">
+                <label for="especie">*Especie</label>
+                <select id="especie" name="especie" required>
+                  <option value="" selected disabled>Especie</option>
+                  <option value="humano">Humano</option>
+                  <option value="unknown">Unknown</option>
+                  <option value="alienigena">Alienígena</option>
+                  <option value="metahumano">Metahumano</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label for="fecha">Fecha</label>
+                <input type="date" id="fecha" name="fecha" />
+              </div>
+
+              <div class="field">
+                <label for="foto">Agregar Foto</label>
+                <input type="file" id="foto" name="foto" accept="image/png, image/jpeg, image/webp" />
+              </div>
+
+              <div class="field descripcion">
+                <label for="descripcion" class="sr-only">Descripción</label>
+                <textarea id="descripcion" name="descripcion" placeholder="Descripción"></textarea>
+              </div>
+
+              <div class="options">
+                <fieldset class="poderes">
+                  <legend>Poderes</legend>
+
+                  <label>
+                    <input type="checkbox" name="poderes" value="volar" />
+                    Volar
+                  </label>
+
+                  <label>
+                    <input type="checkbox" name="poderes" value="superinteligencia" />
+                    SuperInteligencia
+                  </label>
+
+                  <label>
+                    <input type="checkbox" name="poderes" value="vista-de-rayo-laser" />
+                    Vista de rayo láser
+                  </label>
+
+                  <label>
+                    <input type="checkbox" name="poderes" value="billetera-gorda" />
+                    Billetera gorda
+                  </label>
+                </fieldset>
+
+                <fieldset class="tipo-personaje">
+                  <legend>Tipo de personaje</legend>
+
+                  <label>
+                    <input type="radio" name="tipo-personaje" value="heroe" />
+                    Héroe / Heroina
+                  </label>
+
+                  <label>
+                    <input type="radio" name="tipo-personaje" value="villano" />
+                    Villano / Villana
+                  </label>
+                </fieldset>
+              </div>
+            </div>
+
+            <button type="submit">Añadir</button>
+          </form>
+        </section>
       </main>
 
       <footer class="site-footer">
-        <p>Todos los derechos reservados - [TU NOMBRE Y APELLIDO]</p>
+        <p>Todos los derechos reservados - LUCAS PEREZ</p>
         <a href="https://github.com/" class="footer-github">GitHub</a>
       </footer>
     </div>

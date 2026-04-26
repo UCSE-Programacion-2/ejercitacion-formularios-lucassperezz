@@ -1,16 +1,20 @@
-/* Pantalla Home (referencia visual). No forma parte de la autocalificación. */
-*,
-*::before,
-*::after {
+* {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  min-height: 100vh;
 }
 
 body {
-  margin: 0;
-  min-height: 100vh;
-  font-family: "Roboto", system-ui, sans-serif;
-  background: #fff;
-  color: #000;
+  background-color: #ffffff;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #333333;
+  display: flex;
+  flex-direction: column;
 }
 
 a {
@@ -18,84 +22,191 @@ a {
   text-decoration: none;
 }
 
-.top-bar {
-  background: #1cd1b0;
-  padding: 10px 26px;
+.top-header {
+  background-color: #1cd4c9;
+  padding: 10px 20px;
+}
+
+.top-header p {
   font-size: 15px;
+  color: #000000;
 }
 
-.brand-header {
-  background: #00669f;
-  box-shadow: 0 10px 7px rgba(0, 0, 0, 0.25);
-  padding: 24px 28px;
+.main-header {
+  background-color: #00669f;
+  padding: 25px 20px;
+  box-shadow: 0 4px 7px rgba(0, 0, 0, 0.25);
 }
 
-.brand-header h1 {
-  margin: 0;
-  font-size: 40px;
+.main-header h1 {
+  font-size: 48px;
   font-weight: 400;
+  color: #000000;
 }
 
 .main-nav {
-  background: #001d2d;
-  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  background-color: #001d2d;
+  color: #ffffff;
+  padding: 16px 28px;
   display: flex;
   justify-content: flex-end;
   gap: 32px;
-  padding: 16px 28px;
-  color: #fff;
   font-size: 16px;
-}
-
-.page-main {
-  min-height: calc(100vh - 38px - 100px - 51px - 51px);
-  padding: 32px 28px 120px;
-}
-
-.hub-note {
-  max-width: 640px;
-  line-height: 1.5;
-}
-
-.site-footer {
-  background: #00669f;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-  color: #fff9f9;
+}
+
+main {
+  flex: 1;
+  padding: 90px 0 70px;
   display: flex;
+  justify-content: center;
   align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  padding: 14px 28px;
+}
+
+.cards {
+  width: 850px;
+  text-align: center;
+}
+
+.hero-card {
+  width: 330px;
+  height: 590px;
+  display: inline-block;
+  vertical-align: top;
+  margin: 0 36px;
+  background-color: #f3f3f3;
+  border-radius: 16px 16px 0 0;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.card-cover img {
+  width: 100%;
+  height: 194px;
+  display: block;
+  object-fit: cover;
+  border-radius: 16px 16px 0 0;
+}
+
+.heart {
+  position: absolute;
+  top: 35px;
+  left: 20px;
+  font-size: 30px;
+  color: #cc2424;
+}
+
+.hero-avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  display: block;
+  margin: -60px auto 0;
+  position: relative;
+  z-index: 2;
+}
+
+.card-content {
+  height: 336px;
+  padding: 25px 18px 22px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card-content h2 {
+  font-size: 34px;
+  font-weight: 400;
+  margin: 18px 0 16px;
+  color: #000000;
+}
+
+.card-content p {
   font-size: 16px;
+  line-height: 1.25;
+  text-align: left;
+  margin-bottom: 22px;
 }
 
-.footer-github {
-  font-weight: 700;
-  text-decoration: none;
-}
-
-.footer-github:hover {
-  text-decoration: underline;
+.card-content button {
+  margin-top: auto;
+  background-color: #00669f;
+  color: #ffffff;
+  border: none;
+  width: 128px;
+  height: 48px;
+  border-radius: 8px;
+  font-size: 15px;
+  cursor: pointer;
 }
 
 .fab-plus {
   position: fixed;
-  right: 32px;
-  bottom: 96px;
+  right: 42px;
+  bottom: 150px;
   width: 82px;
   height: 82px;
   border-radius: 50%;
-  background: #1cd1b0;
-  color: #001d2d;
-  font-size: 48px;
+  background-color: #00669f;
+  color: #ffffff;
+  font-size: 58px;
   font-weight: 700;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
 }
 
-.fab-plus:focus-visible {
-  outline: 3px solid #00669f;
-  outline-offset: 3px;
+footer {
+  background-color: #00669f;
+  color: #ffffff;
+  padding: 15px 20px;
+  overflow: hidden;
+}
+
+footer p {
+  text-align: center;
+  font-size: 14px;
+  line-height: 48px;
+}
+
+footer .github {
+  float: right;
+  font-size: 58px;
+  font-weight: 700;
+  text-decoration: none;
+  color: #ffffff;
+  line-height: 48px;
+}
+
+@media (max-width: 900px) {
+  .cards {
+    width: 100%;
+  }
+
+  .hero-card {
+    display: block;
+    margin: 0 auto 30px;
+  }
+
+  main {
+    padding: 50px 0 80px;
+  }
+
+  .fab-plus {
+    right: 24px;
+    bottom: 110px;
+  }
+
+  footer .github {
+    float: none;
+    display: block;
+    text-align: center;
+    margin-top: 8px;
+  }
+
+  footer p {
+    line-height: normal;
+  }
 }

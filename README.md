@@ -1,3 +1,4 @@
+[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/AX3_sspW)
 # Ejercitación: Formularios HTML + CSS (continuidad DC Heroes)
 
 Actividad pensada como **segunda entrega** después de `Ejercitacion-Box-Model`. Reutiliza la misma línea gráfica (barra de descuentos, cabecera «DC Heroes», navegación y pie) y suma un **formulario de alta de personaje** según el archivo de Figma.
@@ -80,3 +81,5 @@ La plantilla llega con **tests en rojo** a propósito: debés **crear `img/` y c
 ## Licencia y créditos
 
 Diseño de referencia: curso Programación II — UCSE. Ajustes técnicos y automatización: plantilla para GitHub Classroom.
+
+Entrega final.
