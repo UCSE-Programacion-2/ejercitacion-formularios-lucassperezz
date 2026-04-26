@@ -81,3 +81,5 @@ La plantilla llega con **tests en rojo** a propósito: debés **crear `img/` y c
 ## Licencia y créditos
 
 Diseño de referencia: curso Programación II — UCSE. Ajustes técnicos y automatización: plantilla para GitHub Classroom.
+
+Entrega final
